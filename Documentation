@@ -1,0 +1,44 @@
+1. Install the core tools
+
+Python 3.11 → python.org
+PostgreSQL 16 → postgresql.org (when installing, it'll ask you to set a password for the postgres user — write that down, you'll need it in a few minutes)
+Git + create a GitHub repo called carebridge-ai
+VS Code as your editor
+
+2. Create your folder structure
+
+carebridge-ai/
+├── backend/        ← this is yours
+├── frontend/        ← your teammates work here
+└── README.md
+
+3. Set up your Python virtual environment
+
+bash
+cd carebridge-ai/backend
+python -m venv venv
+venv\Scripts\activate        # Windows
+
+
+4. Create the database
+    4.1
+        Create a server in PostgreSQL
+        Create a Database named as carebridge
+
+                    (or)
+    bash
+        psql -U postgres
+        CREATE DATABASE carebridge;
+    \q
+
+API Token
+    KGAT_e716607dc482e759298e12de660b08f1
+
+To use this token, set the KAGGLE_API_TOKEN environment variable:   
+    export KAGGLE_API_TOKEN=KGAT_e716607dc482e759298e12de660b08f1
+
+
+Or save it to ~/.kaggle/access_token, where the client will read it automatically:
+
+    mkdir -p ~/.kaggle && echo KGAT_e716607dc482e759298e12de660b08f1 > ~/.kaggle/access_token && chmod 600 ~/.kaggle/access_token
+

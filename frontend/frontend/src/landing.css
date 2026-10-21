@@ -1,0 +1,158 @@
+/* Landing page (Home.jsx) only. Plain CSS so it behaves the same with or without Tailwind.
+ * Palette: navy #102C46, teal #167C80, mint #A7E5D2, cream #FFF9F0. */
+.lp {
+  --cb-navy: #102C46;
+  --cb-teal: #167C80;
+  --cb-teal-deep: #0F6165;
+  --cb-mint: #A7E5D2;
+  --cb-cream: #FFF9F0;
+  position: relative;
+  isolation: isolate;          /* keeps the z-index:-1 background inside this page */
+  min-height: 100vh;
+}
+
+/* ---- One fixed background layer (the only copy of the photo) ---- */
+.lp-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--cb-navy);
+}
+@supports (height: 100lvh) {
+  .lp-bg { bottom: auto; height: 100lvh; } /* does not resize when the phone address bar hides */
+}
+.lp-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: block;
+}
+.dark .lp-bg img { filter: brightness(.88); }
+
+/* Phones: show the caregiver and two children in the top part, fade into navy so text sits below the faces. */
+@media (max-width: 639px) {
+  .lp-bg img {
+    height: 62%;
+    object-position: 47% 50%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 68%, transparent 100%);
+  }
+}
+
+/* ---- Keyboard focus that is visible on dark surfaces ---- */
+.lp-header :focus-visible, .lp-hero :focus-visible, .site-footer :focus-visible { outline: 2px solid var(--cb-mint); outline-offset: 2px; }
+
+/* ---- Header: light, translucent navy so links stay readable over any part of the photo ---- */
+.lp-header {
+  position: fixed;             /* stays on screen like the old sticky header, without taking flow space */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(16,44,70,.82), rgba(16,44,70,.66));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.lp-header-menu { background: rgba(16,44,70,.97); border-top: 1px solid rgba(255,255,255,.12); }
+.lp-nav-link {
+  display: block;
+  border-radius: .5rem;
+  padding: .5rem .75rem;
+  font-size: .875rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.88);
+  transition: background-color .15s, color .15s;
+}
+.lp-nav-link:hover { background: rgba(255,255,255,.12); color: #fff; }
+.lp-icon-btn { color: rgba(255,255,255,.9); }
+.lp-icon-btn:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+/* ---- Buttons ---- */
+.lp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: .75rem;
+  padding: .7rem 1.4rem;
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color .15s, border-color .15s, color .15s;
+}
+.lp-btn-primary { background: var(--cb-teal); color: #fff; border: 1px solid var(--cb-teal); }
+.lp-btn-primary:hover { background: var(--cb-teal-deep); border-color: var(--cb-teal-deep); }
+.lp-btn-secondary { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.7); }
+.lp-btn-secondary:hover { background: rgba(255,255,255,.18); border-color: #fff; }
+.lp-btn-sm { padding: .5rem 1rem; font-size: .875rem; }
+
+/* ---- Hero: bottom-left, below the "Support" label painted in the photo, clear of every face ---- */
+.lp-hero {
+  display: flex;
+  align-items: flex-end;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 6rem 1rem 2rem;     /* top padding keeps copy clear of the fixed header on short screens */
+  background:
+    linear-gradient(to top, rgba(16,44,70,.9) 0%, rgba(16,44,70,.6) 30%, rgba(16,44,70,0) 58%),
+    radial-gradient(ellipse 62% 78% at 0% 100%, rgba(16,44,70,.85) 0%, rgba(16,44,70,.45) 55%, rgba(16,44,70,0) 100%),
+    radial-gradient(circle at 0% 100%, rgba(22,124,128,.28) 0%, rgba(22,124,128,0) 45%);
+}
+.lp-hero-inner { width: 100%; max-width: 80rem; margin: 0 auto; }
+.lp-hero-copy { max-width: 34rem; color: var(--cb-cream); }
+.lp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--cb-mint);
+}
+.lp-title {
+  margin: .6rem 0 0;
+  font-family: Lexend, system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  color: var(--cb-cream);
+  text-wrap: balance;
+}
+.lp-lead { margin: .85rem 0 0; max-width: 30rem; font-size: clamp(1rem, .5vw + .85rem, 1.15rem); line-height: 1.55; color: rgba(255,255,255,.92); }
+.lp-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+@media (min-width: 640px) { .lp-hero { padding: 6rem 2rem 2.75rem; } }
+@media (min-width: 1024px) {
+  .lp-hero { padding-bottom: 2.5rem; }
+  .lp-hero-copy { max-width: 36rem; }
+  .lp-title { font-size: clamp(2rem, 1.4vw + 1.1rem, 2.9rem); }  /* two lines, below the photo's own "Support" label */
+  .lp-lead { margin-top: .7rem; max-width: 30rem; }
+  .lp-actions { margin-top: 1.25rem; }
+}
+
+/* ---- Sections that scroll over the fixed photo ---- */
+.lp-sheet { background: rgba(255,249,240,.95); }
+.lp-sheet-alt { background: rgba(255,255,255,.96); }
+.lp-sheet-first { box-shadow: 0 -18px 40px -22px rgba(16,44,70,.55); }
+.dark .lp-sheet { background: rgba(10,20,21,.92); }
+.dark .lp-sheet-alt { background: rgba(16,31,32,.94); }
+
+/* ---- Footer ---- */
+.lp .site-footer { background: var(--cb-navy); border-top: 4px solid var(--cb-teal); }
+.dark .lp .site-footer { background: #0C1A1B; border-top-color: var(--cb-teal); }
+.lp .site-footer .lp-footer-head { color: var(--cb-mint); }
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-btn, .lp-nav-link { transition: none; }
+}
+.lp-bg picture { display: contents; }
+.lp-btn-register { display: none; }
+@media (min-width: 640px) { .lp-btn-register { display: inline-flex; } }

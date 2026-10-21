@@ -1,0 +1,192 @@
+{
+ "in_scope": [
+  {
+   "q": "Could you give me a quick tour of what CareBridge is meant to achieve?",
+   "expected": "What is CareBridge AI"
+  },
+  {
+   "q": "Between registering a child and the child getting help, what stages does the work go through?",
+   "expected": "The five-stage workflow explained simply"
+  },
+  {
+   "q": "As an organization admin, am I allowed to see donor accounts?",
+   "expected": "User roles and what each can do"
+  },
+  {
+   "q": "Our trust runs a hostel for girls; where do we begin?",
+   "expected": "How to register an organization"
+  },
+  {
+   "q": "Somebody at the platform has to approve us before donors notice our requests, is that right?",
+   "expected": "What organization verification means"
+  },
+  {
+   "q": "I run a company and want to fund scholarships. How do I record that preference?",
+   "expected": "How donors register and set their interests"
+  },
+  {
+   "q": "I can teach maths on Saturdays. Where do I note that?",
+   "expected": "How volunteers register skills and availability"
+  },
+  {
+   "q": "We installed the software fresh. Who becomes the first superuser?",
+   "expected": "How administrator accounts are created"
+  },
+  {
+   "q": "The hostel needs forty blankets urgently. How do I raise this?",
+   "expected": "How to add a need"
+  },
+  {
+   "q": "Why does one request sit above another in the list?",
+   "expected": "Urgency levels and the AI priority score"
+  },
+  {
+   "q": "Once the books are delivered what happens to the request's state?",
+   "expected": "Need statuses open pending fulfilled closed"
+  },
+  {
+   "q": "What may we note down about the kids' studies and hobbies?",
+   "expected": "Adding child records and consent"
+  },
+  {
+   "q": "Are children's profiles hidden from the people who give money?",
+   "expected": "Who can see a child's record"
+  },
+  {
+   "q": "A well-wisher handed us rice bags. How do I put that in the app?",
+   "expected": "How to record a donation"
+  },
+  {
+   "q": "Five payments from the same person within sixty minutes: will anything happen?",
+   "expected": "How fraud and anomaly detection works"
+  },
+  {
+   "q": "After reading why a payment was flagged, what are my choices?",
+   "expected": "How to review a suspicious donation flag"
+  },
+  {
+   "q": "The medicine request has been waiting a week with nobody responding. Will the system notice?",
+   "expected": "How need alerts predict problems early"
+  },
+  {
+   "q": "Is there a chart that shows which items are going to run short soon?",
+   "expected": "How the demand forecast works"
+  },
+  {
+   "q": "Why did the app put this particular benefactor at the top for a request?",
+   "expected": "How donor suggestions work"
+  },
+  {
+   "q": "Does the recommender become smarter after I accept or decline items?",
+   "expected": "How the AI learns from administrator decisions"
+  },
+  {
+   "q": "Which factors determine who is proposed to tutor the children?",
+   "expected": "How volunteer suggestions work"
+  },
+  {
+   "q": "What does the supplies proposal do once I accept it?",
+   "expected": "How resource allocation suggestions work"
+  },
+  {
+   "q": "What is 'Needs attention' on the home's rating and how is that rating worked out?",
+   "expected": "How the organization health score works"
+  },
+  {
+   "q": "As an admin I want to choose one donor and see which homes would suit them best",
+   "expected": "How the AI suggestion hub works"
+  },
+  {
+   "q": "What is the difference between urgency and priority numbers on the cards?",
+   "expected": "What fit urgency priority and score mean"
+  },
+  {
+   "q": "Our eldest girl loves biology. Does the app propose professions?",
+   "expected": "How career guidance works"
+  },
+  {
+   "q": "Is there an inbox for pending approvals?",
+   "expected": "What the review queue is"
+  },
+  {
+   "q": "I would like the system to refresh all its predictions right now",
+   "expected": "How to run the AI scans"
+  },
+  {
+   "q": "As the central coordinator how do I change a volunteer's home?",
+   "expected": "How administrators manage donors volunteers and organizations"
+  },
+  {
+   "q": "Can the log of administrator actions be altered afterwards?",
+   "expected": "What the audit trail records"
+  },
+  {
+   "q": "The blankets reached the hostel yesterday; how do I close the loop?",
+   "expected": "How to mark resources as delivered"
+  },
+  {
+   "q": "Is 'password123456' accepted as my new password?",
+   "expected": "Password rules and changing your password"
+  },
+  {
+   "q": "I mistyped my password several times and now it says wait. For how long?",
+   "expected": "Account lockout after wrong passwords"
+  },
+  {
+   "q": "How do I protect my admin account with a six digit code?",
+   "expected": "How to set up two-step verification"
+  },
+  {
+   "q": "My handset was stolen and it held my authenticator. What now?",
+   "expected": "Recovery codes and lost phone for two-step verification"
+  },
+  {
+   "q": "How do I make sure nobody else is still logged in as me?",
+   "expected": "How to sign out of all devices"
+  },
+  {
+   "q": "What is the process for getting back into an account when I forgot the secret word?",
+   "expected": "How to reset a forgotten password"
+  },
+  {
+   "q": "What measures stop the platform from leaking private details?",
+   "expected": "Privacy and data protection principles"
+  },
+  {
+   "q": "Does the assistant look things up or just make things up?",
+   "expected": "How the AI assistant answers questions"
+  },
+  {
+   "q": "Why would the assistant list passages but not give a direct answer?",
+   "expected": "Why the assistant says it is not confident"
+  },
+  {
+   "q": "A staff member asked a child's guardian for consent for photos. Is that necessary at all?",
+   "expected": "Photos and media consent (template)"
+  },
+  {
+   "q": "What steps should staff take the moment a child discloses abuse?",
+   "expected": "How to report a safeguarding concern (template)"
+  },
+  {
+   "q": "I typed the right password but the page still refuses me",
+   "expected": "Troubleshooting sign-in problems"
+  },
+  {
+   "q": "Can the system pay out or approve anything on its own initiative?",
+   "expected": "Can the AI approve things automatically"
+  }
+ ],
+ "out_of_scope": [
+  "What is the tallest building in the world?",
+  "How do I reduce my electricity bill?",
+  "Suggest a name for my puppy",
+  "Explain how photosynthesis works",
+  "How can I improve my chess rating?",
+  "What should I pack for a trek in Nepal?",
+  "Who invented the telephone?",
+  "Is it safe to eat raw eggs?",
+  "How do I apply for a passport?",
+  "Which team won the last football world cup?"
+ ]
+}

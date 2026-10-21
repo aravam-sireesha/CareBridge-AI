@@ -1,0 +1,417 @@
+{
+ "in_scope": [
+  {
+   "q": "What is this platform for?",
+   "expected": "What is CareBridge AI"
+  },
+  {
+   "q": "Explain what CareBridge does in simple words",
+   "expected": "What is CareBridge AI"
+  },
+  {
+   "q": "Walk me through the steps from data entry to helping the child",
+   "expected": "The five-stage workflow explained simply"
+  },
+  {
+   "q": "Can you describe the end to end process in five stages?",
+   "expected": "The five-stage workflow explained simply"
+  },
+  {
+   "q": "Which kinds of accounts exist and what is each allowed to do?",
+   "expected": "User roles and what each can do"
+  },
+  {
+   "q": "What can a volunteer account do versus an administrator?",
+   "expected": "User roles and what each can do"
+  },
+  {
+   "q": "How can our children's home sign up?",
+   "expected": "How to register an organization"
+  },
+  {
+   "q": "We are an NGO, how do we create an account?",
+   "expected": "How to register an organization"
+  },
+  {
+   "q": "Why can't donors see our needs yet?",
+   "expected": "What organization verification means"
+  },
+  {
+   "q": "What does it mean when my organization is unverified?",
+   "expected": "What organization verification means"
+  },
+  {
+   "q": "How do I tell the system what causes I like to support as a donor?",
+   "expected": "How donors register and set their interests"
+  },
+  {
+   "q": "I want to give money, how do I register?",
+   "expected": "How donors register and set their interests"
+  },
+  {
+   "q": "What should I enter for my skills when I sign up to help?",
+   "expected": "How volunteers register skills and availability"
+  },
+  {
+   "q": "How do I say I am free on weekends?",
+   "expected": "How volunteers register skills and availability"
+  },
+  {
+   "q": "Who can make a new admin account?",
+   "expected": "How administrator accounts are created"
+  },
+  {
+   "q": "How do I get the first administrator login?",
+   "expected": "How administrator accounts are created"
+  },
+  {
+   "q": "How do I post a request for school books?",
+   "expected": "How to add a need"
+  },
+  {
+   "q": "Can I delete a need that already got a donation?",
+   "expected": "How to add a need"
+  },
+  {
+   "q": "How does the system decide which request is most urgent?",
+   "expected": "Urgency levels and the AI priority score"
+  },
+  {
+   "q": "What goes into the priority number?",
+   "expected": "Urgency levels and the AI priority score"
+  },
+  {
+   "q": "What is the difference between pending and fulfilled?",
+   "expected": "Need statuses open pending fulfilled closed"
+  },
+  {
+   "q": "When does a need turn into fulfilled by itself?",
+   "expected": "Need statuses open pending fulfilled closed"
+  },
+  {
+   "q": "What information should we store about each child?",
+   "expected": "Adding child records and consent"
+  },
+  {
+   "q": "Do we need permission before saving a kid's details?",
+   "expected": "Adding child records and consent"
+  },
+  {
+   "q": "Can a sponsor look at a child's file?",
+   "expected": "Who can see a child's record"
+  },
+  {
+   "q": "Which users are allowed to open children's records?",
+   "expected": "Who can see a child's record"
+  },
+  {
+   "q": "How do I log a gift that was books instead of money?",
+   "expected": "How to record a donation"
+  },
+  {
+   "q": "Where do I enter a new contribution?",
+   "expected": "How to record a donation"
+  },
+  {
+   "q": "What makes a donation look suspicious to the software?",
+   "expected": "How fraud and anomaly detection works"
+  },
+  {
+   "q": "Why was a first gift of 60000 flagged?",
+   "expected": "How fraud and anomaly detection works"
+  },
+  {
+   "q": "What should I do after the system flags a gift?",
+   "expected": "How to review a suspicious donation flag"
+  },
+  {
+   "q": "How do I mark a flagged payment as a false alarm?",
+   "expected": "How to review a suspicious donation flag"
+  },
+  {
+   "q": "How does the system warn me early about requests that are being ignored?",
+   "expected": "How need alerts predict problems early"
+  },
+  {
+   "q": "After how many days is a medium urgency request considered stale?",
+   "expected": "How need alerts predict problems early"
+  },
+  {
+   "q": "Can the system tell me what categories will be needed next month?",
+   "expected": "How the demand forecast works"
+  },
+  {
+   "q": "How does the prediction of future demand work?",
+   "expected": "How the demand forecast works"
+  },
+  {
+   "q": "How does the AI choose which donors to recommend for a need?",
+   "expected": "How donor suggestions work"
+  },
+  {
+   "q": "What weights are used for donor fit?",
+   "expected": "How donor suggestions work"
+  },
+  {
+   "q": "Does the model get better when we approve or reject suggestions?",
+   "expected": "How the AI learns from administrator decisions"
+  },
+  {
+   "q": "After how many decisions does machine learning kick in?",
+   "expected": "How the AI learns from administrator decisions"
+  },
+  {
+   "q": "How are volunteers ranked for a request?",
+   "expected": "How volunteer suggestions work"
+  },
+  {
+   "q": "Does availability affect which volunteer is suggested?",
+   "expected": "How volunteer suggestions work"
+  },
+  {
+   "q": "How are books or food assigned to a request by the AI?",
+   "expected": "How resource allocation suggestions work"
+  },
+  {
+   "q": "What happens to the stock when I approve an allocation?",
+   "expected": "How resource allocation suggestions work"
+  },
+  {
+   "q": "How is an organization's score out of 100 calculated?",
+   "expected": "How the organization health score works"
+  },
+  {
+   "q": "What score counts as at risk?",
+   "expected": "How the organization health score works"
+  },
+  {
+   "q": "What can I do on the page that suggests things for any organization or donor?",
+   "expected": "How the AI suggestion hub works"
+  },
+  {
+   "q": "How can I see the best volunteers and resources for one request in a single place?",
+   "expected": "How the AI suggestion hub works"
+  },
+  {
+   "q": "What do the numbers like fit and priority tell me?",
+   "expected": "What fit urgency priority and score mean"
+  },
+  {
+   "q": "Is a bigger priority number better?",
+   "expected": "What fit urgency priority and score mean"
+  },
+  {
+   "q": "How does the system suggest careers for the kids?",
+   "expected": "How career guidance works"
+  },
+  {
+   "q": "Who decides the child's career path?",
+   "expected": "How career guidance works"
+  },
+  {
+   "q": "Where do all the items waiting for my approval appear?",
+   "expected": "What the review queue is"
+  },
+  {
+   "q": "Which kinds of things need an administrator's decision?",
+   "expected": "What the review queue is"
+  },
+  {
+   "q": "How do I trigger all the predictions at once?",
+   "expected": "How to run the AI scans"
+  },
+  {
+   "q": "How often should the scans run?",
+   "expected": "How often to run scans and review the queue"
+  },
+  {
+   "q": "Where can an admin edit every donor and volunteer in the system?",
+   "expected": "How administrators manage donors volunteers and organizations"
+  },
+  {
+   "q": "Why can't I delete a donor who gave money?",
+   "expected": "How administrators manage donors volunteers and organizations"
+  },
+  {
+   "q": "Can anybody edit the history of what admins did?",
+   "expected": "What the audit trail records"
+  },
+  {
+   "q": "What actions are logged for accountability?",
+   "expected": "What the audit trail records"
+  },
+  {
+   "q": "How do I confirm that the books reached the home?",
+   "expected": "How to mark resources as delivered"
+  },
+  {
+   "q": "What do I click if a delivery is cancelled?",
+   "expected": "How to mark resources as delivered"
+  },
+  {
+   "q": "How strong must my password be?",
+   "expected": "Password rules and changing your password"
+  },
+  {
+   "q": "Where do I change my password?",
+   "expected": "Password rules and changing your password"
+  },
+  {
+   "q": "My account got blocked after typing the wrong password",
+   "expected": "Account lockout after wrong passwords"
+  },
+  {
+   "q": "How long is the lockout?",
+   "expected": "Account lockout after wrong passwords"
+  },
+  {
+   "q": "How do I turn on 2FA?",
+   "expected": "How to set up two-step verification"
+  },
+  {
+   "q": "Which app do I need for the login code?",
+   "expected": "How to set up two-step verification"
+  },
+  {
+   "q": "I lost my phone, how can I still sign in with two-step?",
+   "expected": "Recovery codes and lost phone for two-step verification"
+  },
+  {
+   "q": "What are backup codes?",
+   "expected": "Recovery codes and lost phone for two-step verification"
+  },
+  {
+   "q": "How do I log out the other computers?",
+   "expected": "How to sign out of all devices"
+  },
+  {
+   "q": "I left my account open on a shared PC",
+   "expected": "How to sign out of all devices"
+  },
+  {
+   "q": "I forgot my password, what now?",
+   "expected": "How to reset a forgotten password"
+  },
+  {
+   "q": "How long does a reset code last?",
+   "expected": "How to reset a forgotten password"
+  },
+  {
+   "q": "How is personal data protected?",
+   "expected": "Privacy and data protection principles"
+  },
+  {
+   "q": "Does the platform sell our data?",
+   "expected": "Privacy and data protection principles"
+  },
+  {
+   "q": "Why does the page say too many attempts?",
+   "expected": "Why sign-in says too many attempts"
+  },
+  {
+   "q": "How does the chatbot find its answers?",
+   "expected": "How the AI assistant answers questions"
+  },
+  {
+   "q": "Where do the assistant's answers come from?",
+   "expected": "How the AI assistant answers questions"
+  },
+  {
+   "q": "Why did the assistant refuse to answer with certainty?",
+   "expected": "Why the assistant says it is not confident"
+  },
+  {
+   "q": "What does low confidence mean?",
+   "expected": "Why the assistant says it is not confident"
+  },
+  {
+   "q": "Can the assistant approve an organization for me?",
+   "expected": "What the assistant cannot do"
+  },
+  {
+   "q": "Does the chatbot give legal advice?",
+   "expected": "What the assistant cannot do"
+  },
+  {
+   "q": "What live questions can I ask about donors and needs?",
+   "expected": "Questions to ask the assistant about live data"
+  },
+  {
+   "q": "How do I add my own policy for the assistant to use?",
+   "expected": "How to add knowledge entries for the assistant"
+  },
+  {
+   "q": "What are the basic rules for keeping children safe?",
+   "expected": "Child safeguarding principles (template)"
+  },
+  {
+   "q": "Who do I tell if a child may be in danger?",
+   "expected": "How to report a safeguarding concern (template)"
+  },
+  {
+   "q": "What is the child helpline number?",
+   "expected": "How to report a safeguarding concern (template)"
+  },
+  {
+   "q": "What checks should a volunteer pass before working with kids?",
+   "expected": "Volunteer screening and background checks (template)"
+  },
+  {
+   "q": "Can we post pictures of the children online?",
+   "expected": "Photos and media consent (template)"
+  },
+  {
+   "q": "How long should we keep personal records?",
+   "expected": "Data retention and deletion (template)"
+  },
+  {
+   "q": "How should I handle a donor whose payment looks fake?",
+   "expected": "What to do about a suspected fraudulent donation"
+  },
+  {
+   "q": "I can't log in, what should I check?",
+   "expected": "Troubleshooting sign-in problems"
+  },
+  {
+   "q": "How do I switch to the dark theme?",
+   "expected": "How to switch dark mode"
+  },
+  {
+   "q": "What does allocation mean?",
+   "expected": "Beginner glossary of terms"
+  },
+  {
+   "q": "Explain the words used in this app for a beginner",
+   "expected": "Beginner glossary of terms"
+  },
+  {
+   "q": "Is this artificial intelligence or just rules?",
+   "expected": "What AI and machine learning mean here"
+  },
+  {
+   "q": "Will the AI decide on its own?",
+   "expected": "Can the AI approve things automatically"
+  },
+  {
+   "q": "How do you make sure the recommendations are not unfair?",
+   "expected": "How the system tries to be fair and explainable"
+  }
+ ],
+ "out_of_scope": [
+  "What is the capital of France?",
+  "Who won the cricket world cup?",
+  "Give me a recipe for chicken biryani",
+  "How do I change a flat tyre?",
+  "What is the share price of Tesla today?",
+  "Write a poem about the moon",
+  "How tall is Mount Everest?",
+  "Which programming language is best for games?",
+  "What is the weather in Mumbai tomorrow?",
+  "How many calories are in a banana?",
+  "Explain quantum entanglement",
+  "Best smartphone under 20000 rupees",
+  "How do I train for a marathon?",
+  "Translate good morning into Japanese",
+  "Who painted the Mona Lisa?"
+ ]
+}

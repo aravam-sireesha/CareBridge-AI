@@ -1,0 +1,206 @@
+{
+ "in_scope": [
+  {
+   "q": "I am new here. Can someone tell me what this website actually does?",
+   "expected": "What is CareBridge AI"
+  },
+  {
+   "q": "Please describe the journey of information through the system",
+   "expected": "The five-stage workflow explained simply"
+  },
+  {
+   "q": "What permissions does each type of user have?",
+   "expected": "User roles and what each can do"
+  },
+  {
+   "q": "Our shelter wants to join, what should we fill in?",
+   "expected": "How to register an organization"
+  },
+  {
+   "q": "What is the purpose of the admin checking an organization?",
+   "expected": "What organization verification means"
+  },
+  {
+   "q": "I would like to sponsor kids' education, how do I tell the app that?",
+   "expected": "How donors register and set their interests"
+  },
+  {
+   "q": "Which details do helpers give about when they can come?",
+   "expected": "How volunteers register skills and availability"
+  },
+  {
+   "q": "How was the very first admin created on a new installation?",
+   "expected": "How administrator accounts are created"
+  },
+  {
+   "q": "Steps for creating a new request for food",
+   "expected": "How to add a need"
+  },
+  {
+   "q": "How is the order of the request list worked out?",
+   "expected": "Urgency levels and the AI priority score"
+  },
+  {
+   "q": "What does it mean when a request is closed?",
+   "expected": "Need statuses open pending fulfilled closed"
+  },
+  {
+   "q": "What should be written in a young person's profile?",
+   "expected": "Adding child records and consent"
+  },
+  {
+   "q": "Is a volunteer able to read a student's profile?",
+   "expected": "Who can see a child's record"
+  },
+  {
+   "q": "How can I add a gift of clothes to the system?",
+   "expected": "How to record a donation"
+  },
+  {
+   "q": "Which situations make a payment get a warning?",
+   "expected": "How fraud and anomaly detection works"
+  },
+  {
+   "q": "How do I deal with a warning about a payment?",
+   "expected": "How to review a suspicious donation flag"
+  },
+  {
+   "q": "What triggers an alert about an old request?",
+   "expected": "How need alerts predict problems early"
+  },
+  {
+   "q": "Can the system forecast demand for the coming month?",
+   "expected": "How the demand forecast works"
+  },
+  {
+   "q": "On what basis does the app recommend a supporter for a request?",
+   "expected": "How donor suggestions work"
+  },
+  {
+   "q": "Do my approvals teach the system anything?",
+   "expected": "How the AI learns from administrator decisions"
+  },
+  {
+   "q": "What is considered when picking a helper for a task?",
+   "expected": "How volunteer suggestions work"
+  },
+  {
+   "q": "How does stock get reserved when I accept a proposal for supplies?",
+   "expected": "How resource allocation suggestions work"
+  },
+  {
+   "q": "What parts make up the rating for a children's home?",
+   "expected": "How the organization health score works"
+  },
+  {
+   "q": "Is there one screen where I can look at any home, giver or helper and get ideas?",
+   "expected": "How the AI suggestion hub works"
+  },
+  {
+   "q": "What is meant by the fit number?",
+   "expected": "What fit urgency priority and score mean"
+  },
+  {
+   "q": "Can the app suggest what a teenager could study?",
+   "expected": "How career guidance works"
+  },
+  {
+   "q": "Where is the list of everything the AI wants me to look at?",
+   "expected": "What the review queue is"
+  },
+  {
+   "q": "Is there a single button that runs every check?",
+   "expected": "How to run the AI scans"
+  },
+  {
+   "q": "Where can I see every volunteer across all homes?",
+   "expected": "How administrators manage donors volunteers and organizations"
+  },
+  {
+   "q": "Who did what and when, is it tracked?",
+   "expected": "What the audit trail records"
+  },
+  {
+   "q": "The supplies arrived. What do I press?",
+   "expected": "How to mark resources as delivered"
+  },
+  {
+   "q": "What makes a password acceptable?",
+   "expected": "Password rules and changing your password"
+  },
+  {
+   "q": "How many wrong tries before I am blocked?",
+   "expected": "Account lockout after wrong passwords"
+  },
+  {
+   "q": "Steps to add a code from my phone to my admin login",
+   "expected": "How to set up two-step verification"
+  },
+  {
+   "q": "What if I cannot access my authenticator any more?",
+   "expected": "Recovery codes and lost phone for two-step verification"
+  },
+  {
+   "q": "How can I kick every other browser out of my account?",
+   "expected": "How to sign out of all devices"
+  },
+  {
+   "q": "Reset link for a lost password",
+   "expected": "How to reset a forgotten password"
+  },
+  {
+   "q": "Is my private information kept safe?",
+   "expected": "Privacy and data protection principles"
+  },
+  {
+   "q": "How does the helper bot work out what to answer?",
+   "expected": "How the AI assistant answers questions"
+  },
+  {
+   "q": "The bot said it was unsure, why?",
+   "expected": "Why the assistant says it is not confident"
+  },
+  {
+   "q": "Is the helper bot allowed to make approvals?",
+   "expected": "What the assistant cannot do"
+  },
+  {
+   "q": "What should I do if I think a child is being harmed?",
+   "expected": "How to report a safeguarding concern (template)"
+  },
+  {
+   "q": "Do volunteers have to be vetted?",
+   "expected": "Volunteer screening and background checks (template)"
+  },
+  {
+   "q": "Is it ok to share a picture of a child on social media?",
+   "expected": "Photos and media consent (template)"
+  },
+  {
+   "q": "My login is not working",
+   "expected": "Troubleshooting sign-in problems"
+  },
+  {
+   "q": "What do the terms donor, flag and suggestion mean?",
+   "expected": "Beginner glossary of terms"
+  },
+  {
+   "q": "Will the software make final decisions without a person?",
+   "expected": "Can the AI approve things automatically"
+  }
+ ],
+ "out_of_scope": [
+  "How do I bake a chocolate cake?",
+  "Who is the prime minister of Canada?",
+  "Recommend a good laptop for video editing",
+  "What is the speed of light?",
+  "Plan a three day trip to Goa",
+  "How do vaccines work?",
+  "Tips for learning the guitar",
+  "What is the best time to plant tomatoes?",
+  "Convert 50 miles to kilometres",
+  "Summarise the plot of Hamlet",
+  "How do I fix a leaking tap?",
+  "What is bitcoin?"
+ ]
+}
