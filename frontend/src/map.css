@@ -1,0 +1,94 @@
+/* Plain-CSS tile map (no map library). Colours follow the app tokens. */
+.cbmap { position: relative; overflow: hidden; border: 1px solid rgb(var(--cb-line, 229 225 216)); border-radius: 1rem; background: #e8ece9; touch-action: none; user-select: none; }
+.cbmap:focus-visible { outline: 2px solid rgb(var(--cb-primary, 15 118 110)); outline-offset: 2px; }
+.cbmap-tile { position: absolute; width: 256px; height: 256px; max-width: none; pointer-events: none; }
+.cbmap-layer { position: absolute; inset: 0; cursor: grab; }
+.cbmap-layer:active { cursor: grabbing; }
+.cbmap-marker { position: absolute; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center; pointer-events: none; }
+.cbmap-pin { width: 22px; height: 22px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.cbmap-marker--pickup .cbmap-pin { background: #B3441F; } .cbmap-marker--delivery .cbmap-pin { background: #0F766E; } .cbmap-marker--me .cbmap-pin { background: #2563eb; } .cbmap-marker--volunteer .cbmap-pin { background: #7c3aed; }
+.cbmap-marker--stale .cbmap-pin { background: #6b7280; border-style: dashed; }
+.cbmap-label { margin-top: 3px; padding: 1px 7px; border-radius: 999px; background: rgba(15,23,42,.88); color: #fff; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.cbmap-accuracy { position: absolute; border-radius: 50%; background: rgba(37,99,235,.14); border: 1px solid rgba(37,99,235,.5); transform: translate(-50%, -50%); pointer-events: none; }
+.cbmap-controls { position: absolute; top: 8px; right: 8px; display: flex; flex-direction: column; gap: 4px; }
+.cbmap-controls button { width: 34px; height: 34px; border: 1px solid rgba(15,23,42,.25); border-radius: 8px; background: #fff; color: #0f172a; font-size: 18px; font-weight: 700; cursor: pointer; }
+.cbmap-controls button:hover { background: #f0fdfa; }
+.cbmap-attrib { position: absolute; right: 0; bottom: 0; padding: 1px 6px; background: rgba(255,255,255,.85); font-size: 10px; color: #334155; }
+.cbmap-attrib a { color: inherit; text-decoration: underline; }
+.cbmap-note { position: absolute; inset: 0; display: grid; place-items: center; padding: 1rem; text-align: center; background: rgba(241,245,249,.92); color: #334155; font-size: 13px; }
+
+/* Live tracking / navigation panel */
+.cbt { display: grid; gap: .85rem; padding: 1rem; border: 1px solid rgb(var(--cb-line, 229 225 216)); border-radius: 1rem; background: rgb(var(--cb-surface, 255 255 255)); }
+.cbt h3 { margin: 0; font-size: 1rem; font-weight: 700; color: rgb(var(--cb-ink, 15 23 42)); }
+.cbt p { margin: 0; font-size: .85rem; line-height: 1.45; color: rgb(var(--cb-ink-muted, 71 85 105)); }
+.cbt-status { display: inline-flex; align-items: center; gap: .45rem; font-size: .85rem; font-weight: 600; color: rgb(var(--cb-ink, 15 23 42)); }
+.cbt-dot { width: .6rem; height: .6rem; border-radius: 50%; background: #16a34a; } .cbt-dot--stale { background: #b45309; } .cbt-dot--off { background: #6b7280; }
+.cbt-consent { padding: .75rem .9rem; border-radius: .75rem; background: #f0f9ff; color: #075985; }
+.cbt-consent p { color: inherit; }
+.cbt-error { padding: .6rem .8rem; border-radius: .75rem; background: #fef2f2; color: #b91c1c; font-size: .85rem; }
+.cbt-nav { display: grid; gap: .6rem; }
+.cbt-dest { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; padding: .65rem .8rem; border: 1px solid rgb(var(--cb-line, 229 225 216)); border-radius: .75rem; }
+.cbt-dest strong { display: block; font-size: .9rem; color: rgb(var(--cb-ink, 15 23 42)); }
+.cbt-dest span { font-size: .8rem; color: rgb(var(--cb-ink-muted, 71 85 105)); }
+.cbt-links { display: flex; flex-wrap: wrap; gap: .4rem; }
+.cbt-links a { padding: .4rem .8rem; border-radius: 999px; border: 1px solid #0f766e; color: #0f766e; font-size: .8rem; font-weight: 600; text-decoration: none; }
+.cbt-links a:first-child { background: #0f766e; color: #fff; }
+.cbt-links a:focus-visible { outline: 2px solid #0f766e; outline-offset: 2px; }
+.cbt-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.cbt-btn { padding: .55rem 1.1rem; border-radius: .75rem; border: 1px solid transparent; background: #0f766e; color: #fff; font-size: .875rem; font-weight: 600; cursor: pointer; }
+.cbt-btn--ghost { background: #fff; color: #334155; border-color: #cbd5e1; } .cbt-btn--danger { background: #fef2f2; color: #b91c1c; }
+.cbt-btn:disabled { opacity: .6; cursor: default; }
+.cbt-btn:focus-visible { outline: 2px solid #0f766e; outline-offset: 2px; }
+
+/* More pin kinds (map views for donors, volunteers, organizations and administrators) */
+.cbmap-marker--org .cbmap-pin { background: #115E59; } .cbmap-marker--org-unverified .cbmap-pin { background: #9ca3af; border-style: dashed; }
+.cbmap-marker--donor .cbmap-pin { background: #db2777; } .cbmap-marker--live .cbmap-pin { background: #16a34a; }
+.cbmap-marker--need-critical .cbmap-pin { background: #b91c1c; } .cbmap-marker--need-high .cbmap-pin { background: #ea580c; }
+.cbmap-marker--need-medium .cbmap-pin { background: #ca8a04; } .cbmap-marker--need-low .cbmap-pin { background: #0284c7; } .cbmap-marker--need .cbmap-pin { background: #0F766E; }
+.cbmap-marker--gap .cbmap-pin { box-shadow: 0 0 0 3px rgba(185,28,28,.55), 0 1px 4px rgba(0,0,0,.4); }
+.cbmap-marker--clickable { pointer-events: auto; cursor: pointer; }
+.cbmap-marker--clickable:focus-visible { outline: 2px solid rgb(var(--cb-primary, 15 118 110)); outline-offset: 3px; border-radius: 8px; }
+.cbmap-marker--selected { z-index: 5; } .cbmap-marker--selected .cbmap-pin { transform: rotate(-45deg) scale(1.3); }
+.cbmap-marker--nolabel .cbmap-label { display: none; } .cbmap-marker--nolabel:hover .cbmap-label { display: block; z-index: 6; }
+.cbmap-ring { position: absolute; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; background: rgba(15,118,110,.09); border: 2px dashed rgba(15,118,110,.75); }
+
+/* Legend and view switch used by the map screens */
+.cbm-legend { display: flex; flex-wrap: wrap; gap: .35rem .9rem; margin: .5rem 0 0; padding: 0; list-style: none; font-size: .75rem; color: rgb(var(--cb-ink-muted, 71 85 105)); }
+.cbm-legend li { display: inline-flex; align-items: center; gap: .35rem; }
+.cbm-swatch { width: .7rem; height: .7rem; border-radius: 50%; border: 1.5px solid #fff; box-shadow: 0 0 0 1px rgba(15,23,42,.3); }
+.cbm-switch { display: inline-flex; border: 1px solid rgb(var(--cb-line, 229 225 216)); border-radius: .75rem; overflow: hidden; }
+.cbm-switch button { padding: .3rem .8rem; font-size: .8rem; font-weight: 600; background: transparent; color: rgb(var(--cb-ink-muted, 71 85 105)); cursor: pointer; }
+.cbm-switch button[aria-pressed="true"] { background: #0f766e; color: #fff; }
+.cbm-switch button:focus-visible { outline: 2px solid #0f766e; outline-offset: -2px; }
+
+/* Optional route-record consent inside the sharing prompt */
+.cbt-check { display: flex; gap: .55rem; align-items: flex-start; margin-top: .6rem; font-size: .85rem; color: inherit; cursor: pointer; }
+.cbt-check input { margin-top: .2rem; width: 1rem; height: 1rem; accent-color: #0f766e; flex: none; }
+
+/* Route lines and grouped pins */
+.cbmap-lines { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; }
+.cbmap-marker--cluster .cbmap-pin { display: grid; place-items: center; width: 2rem; height: 2rem; background: #115E59; color: #fff; font-size: .8rem; font-weight: 700; border: 2px solid #fff; }
+.cbmap-marker--cluster .cbmap-label { font-weight: 600; }
+
+/* 3D map (CesiumJS) */
+.cbmap3d { position: relative; width: 100%; border-radius: .9rem; overflow: hidden; background: #0b1f1c; }
+.cbmap3d .cesium-viewer, .cbmap3d .cesium-viewer-cesiumWidgetContainer, .cbmap3d .cesium-widget, .cbmap3d canvas { width: 100%; height: 100%; }
+.cbmap3d .cesium-widget-credits { font-size: 10px; }
+
+/* Map hub shell */
+.cblm-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: .6rem; }
+.cblm-seg { display: inline-flex; border: 1px solid #cbd5e1; border-radius: .7rem; overflow: hidden; background: #fff; }
+.cblm-seg button { padding: .45rem .9rem; font-size: .85rem; font-weight: 600; color: #334155; background: transparent; border: 0; cursor: pointer; }
+.cblm-seg button[aria-pressed="true"] { background: #287C70; color: #fff; }
+.cblm-seg button:disabled, .cblm-btn:disabled { opacity: .55; cursor: default; }
+.cblm-btn { padding: .45rem .9rem; border-radius: .7rem; border: 1px solid #cbd5e1; background: #fff; color: #334155; font-size: .85rem; font-weight: 600; cursor: pointer; }
+.cblm-seg button:focus-visible, .cblm-btn:focus-visible, .cblm-search input:focus-visible { outline: 2px solid #287C70; outline-offset: 2px; }
+.cblm-search { position: relative; flex: 1 1 14rem; min-width: 12rem; }
+.cblm-search input { width: 100%; padding: .5rem .8rem; border: 1px solid #cbd5e1; border-radius: .7rem; font-size: .9rem; }
+.cblm-search ul { position: absolute; z-index: 20; left: 0; right: 0; top: calc(100% + 4px); margin: 0; padding: .25rem; list-style: none; background: #fff; border: 1px solid #cbd5e1; border-radius: .7rem; box-shadow: 0 8px 24px rgba(0,0,0,.12); max-height: 16rem; overflow: auto; }
+.cblm-search li { padding: .5rem .6rem; border-radius: .5rem; font-size: .85rem; cursor: pointer; } .cblm-search li:hover, .cblm-search li:focus { background: #DDF3EC; outline: none; } .cblm-search li span { color: #65766F; }
+.cblm-note { margin: 0 0 .6rem; padding: .55rem .8rem; border-radius: .7rem; background: #f0f9ff; color: #075985; font-size: .85rem; }
+.cblm-skeleton { display: grid; place-items: center; border-radius: .9rem; color: #65766F; background: linear-gradient(90deg, #E1EAE5, #F6F9F7, #E1EAE5); background-size: 200% 100%; animation: cblm-shimmer 1.4s infinite linear; }
+.cblm-error { display: grid; place-content: center; justify-items: center; gap: .6rem; padding: 1rem; border-radius: .9rem; background: #fef2f2; color: #b91c1c; text-align: center; }
+@keyframes cblm-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .cblm-skeleton { animation: none; } }

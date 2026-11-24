@@ -1,0 +1,26 @@
+# secrets: never commit real environment files
+.env
+.env.*
+!.env.example
+
+# virtual environments (any common name) and caches
+.venv/
+.ven/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# local data and artefacts
+*.db
+*.sqlite3
+data/raw/*
+!data/raw/.gitkeep
+backups/
+*.dump
+*.sql.gz
+.coverage
+htmlcov/

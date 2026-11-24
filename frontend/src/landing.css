@@ -1,0 +1,177 @@
+/* Landing page (Home.jsx) only. Plain CSS so it behaves the same with or without Tailwind.
+ * Calm, light design in the app's teal palette. No full-bleed photo, no gradient overlays. */
+.lp {
+  --cb-teal: #0f766e; --cb-teal-deep: #115e59; --cb-mint: #99f6e4;
+  --lp-bg: #f8fafc; --lp-surface: #ffffff; --lp-ink: #0f172a; --lp-muted: #475569; --lp-line: #e2e8f0; --lp-hover: #f1f5f9;
+  position: relative; min-height: 100vh; background: var(--lp-bg); color: var(--lp-ink);
+}
+.dark .lp { --lp-bg: #0a1415; --lp-surface: #101f20; --lp-ink: #e8edf5; --lp-muted: #a5b1c4; --lp-line: #1f3234; --lp-hover: #16292b; --cb-teal: #14b8a6; --cb-teal-deep: #2dd4bf; }
+
+.lp-header :focus-visible, .lp-hero :focus-visible { outline: 2px solid var(--cb-teal); outline-offset: 2px; }
+.lp-header { position: sticky; top: 0; z-index: 30; background: color-mix(in srgb, var(--lp-bg) 92%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--lp-line); }
+.lp-header-menu { background: var(--lp-bg); border-top: 1px solid var(--lp-line); }
+.lp-nav-link { display: block; border-radius: .5rem; padding: .5rem .75rem; font-size: .875rem; font-weight: 600; color: var(--lp-muted); transition: background-color .15s, color .15s; }
+.lp-nav-link:hover { background: var(--lp-hover); color: var(--lp-ink); }
+.lp-icon-btn { color: var(--lp-muted); } .lp-icon-btn:hover { background: var(--lp-hover); color: var(--lp-ink); }
+
+.lp-btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border-radius: .6rem; padding: .7rem 1.3rem; font-size: .95rem; font-weight: 600; line-height: 1.2; text-decoration: none; transition: background-color .15s, border-color .15s, color .15s; }
+.lp-btn-primary { background: var(--cb-teal); color: #fff; border: 1px solid var(--cb-teal); }
+.dark .lp-btn-primary { color: #04201c; }
+.lp-btn-primary:hover { background: var(--cb-teal-deep); border-color: var(--cb-teal-deep); }
+.lp-btn-secondary { background: var(--lp-surface); color: var(--lp-ink); border: 1px solid var(--lp-line); }
+.lp-btn-secondary:hover { background: var(--lp-hover); }
+.lp-btn-sm { padding: .45rem .95rem; font-size: .85rem; }
+.lp-btn-register { display: none; } @media (min-width: 640px) { .lp-btn-register { display: inline-flex; } }
+
+/* ---- Hero: copy left, photograph right; stacked on small screens ---- */
+.lp-hero { padding: 2.5rem 1rem 3rem; }
+.lp-hero-inner { display: grid; gap: 2rem; align-items: center; width: 100%; max-width: 76rem; margin: 0 auto; }
+.lp-hero-copy { max-width: 36rem; }
+.lp-title { margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; font-size: clamp(2rem, 1.2rem + 3.2vw, 3.4rem); color: var(--lp-ink); }
+.lp-lead { margin: 1rem 0 0; font-size: clamp(1rem, .5vw + .9rem, 1.15rem); line-height: 1.6; color: var(--lp-muted); }
+.lp-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+.lp-trust { display: flex; align-items: flex-start; gap: .5rem; margin: 1.4rem 0 0; font-size: .85rem; line-height: 1.45; color: var(--lp-muted); }
+.lp-trust svg { flex-shrink: 0; margin-top: .1rem; color: var(--cb-teal); }
+@media (min-width: 640px) { .lp-hero { padding: 3.5rem 2rem 4rem; } }
+@media (min-width: 1024px) { .lp-hero-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; } }
+
+.lp-hero-media { min-width: 0; }
+.lp-media { position: relative; margin: 0; overflow: hidden; border-radius: 20px; border: 1px solid var(--lp-line); background: var(--lp-hover); aspect-ratio: 4 / 3; }
+.lp-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.lp-media-skeleton { animation: lpPulse 1.4s ease-in-out infinite; }
+.lp-credit { position: absolute; left: 0; right: 0; bottom: 0; padding: .35rem .75rem; font-size: .7rem; color: #fff; background: rgba(15,23,42,.55); }
+.lp-credit a { color: inherit; text-decoration: underline; }
+@media (max-width: 1023px) { .lp-media { aspect-ratio: 16 / 10; max-height: 20rem; } }
+
+.lp-panel { border-radius: 20px; border: 1px solid var(--lp-line); background: var(--lp-surface); padding: 1.25rem; }
+.lp-panel-title { margin: 0 0 .9rem; font-size: .8rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--lp-muted); }
+.lp-panel-item { display: flex; align-items: center; justify-content: space-between; gap: .75rem; border: 1px solid var(--lp-line); border-radius: 12px; padding: .7rem .85rem; }
+.lp-panel-empty { margin: 0; font-size: .9rem; color: var(--lp-muted); }
+.lp-panel-link { display: inline-block; margin-top: 1rem; font-size: .85rem; font-weight: 600; color: var(--cb-teal); }
+.lp-panel-link:hover { text-decoration: underline; }
+@keyframes lpPulse { 50% { opacity: .55; } }
+
+/* ---- Sections ---- */
+.lp-sheet { background: var(--lp-bg); }
+.lp-sheet-alt { background: var(--lp-surface); }
+.lp-sheet-first { border-top: 1px solid var(--lp-line); }
+
+/* ---- Footer ---- */
+.lp .site-footer { background: #0f2a2e; border-top: 4px solid var(--cb-teal); }
+.dark .lp .site-footer { background: #0a1415; }
+.lp .site-footer .lp-footer-head { color: var(--cb-mint); }
+@media (prefers-reduced-motion: reduce) { .lp-btn, .lp-nav-link { transition: none; } .lp-media-skeleton { animation: none; } }
+
+
+/* ---- Fixed full-screen backdrop (Phase 3) ----
+ * A real position:fixed layer behind everything. The hero is transparent; every later section has an opaque
+ * background, so the page content scrolls over a picture that stays put. position:fixed is used instead of
+ * background-attachment:fixed because iOS Safari and many Android browsers ignore or janky-render the latter. */
+.lp-backdrop { position: fixed; inset: 0; z-index: 0; overflow: hidden; background: #0f2a2e; transform: translateZ(0); }
+.lp-backdrop picture, .lp-backdrop img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Without a photo: a calm deep-teal surface with one soft light, nothing pictorial. */
+.lp-backdrop::before { content: ''; position: absolute; inset: 0; background: radial-gradient(70% 60% at 15% 0%, rgba(45,212,191,.18), transparent 70%); }
+/* Overlay strength is a contrast decision: the lightest possible photo pixel under the lightest overlay point still gives
+ * white text at least 4.5:1 (checked in tests/landing.test.jsx). Do not make it lighter without re-checking. */
+.lp-backdrop-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,47,52,.80) 0%, rgba(8,47,52,.70) 55%, rgba(8,47,52,.66) 100%); }
+.lp > header, .lp > main, .lp > footer, .lp > a { position: relative; z-index: 1; }
+.lp > header { position: sticky; z-index: 30; }
+
+.lp-hero-full { display: flex; align-items: center; min-height: calc(100vh - 4.25rem); min-height: calc(100svh - 4.25rem); background: transparent; }
+.lp-hero-full .lp-hero-inner { position: relative; }
+.lp-hero-full .lp-title { color: #fff; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+.lp-hero-full .lp-lead, .lp-hero-full .lp-trust { color: rgba(255,255,255,.92); text-shadow: 0 1px 8px rgba(0,0,0,.3); }
+.lp-hero-full .lp-trust svg { color: var(--cb-mint); }
+.lp-hero-full .lp-btn-primary { background: #fff; color: #0b4a46; border-color: #fff; }
+.lp-hero-full .lp-btn-primary:hover { background: var(--cb-mint); border-color: var(--cb-mint); }
+.lp-hero-full .lp-btn-secondary { background: rgba(255,255,255,.14); color: #fff; border-color: rgba(255,255,255,.55); }
+.lp-hero-full .lp-btn-secondary:hover { background: rgba(255,255,255,.26); }
+.lp-hero-full .lp-btn-ghost { background: transparent; color: #fff; border: 1px solid transparent; text-decoration: underline; text-underline-offset: 4px; }
+.lp-hero-full .lp-btn-ghost:hover { background: rgba(255,255,255,.12); }
+.lp-hero-full :focus-visible { outline-color: #fff; }
+/* the live-needs panel becomes a translucent glass surface */
+.lp-hero-full .lp-panel { background: rgba(8,47,52,.55); border-color: rgba(255,255,255,.28); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.lp-hero-full .lp-panel-title, .lp-hero-full .lp-panel-empty { color: rgba(255,255,255,.9); }
+.lp-hero-full .lp-panel-item { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.22); }
+.lp-hero-full .lp-panel [class~="text-ink"] { color: #fff; }
+.lp-hero-full .lp-panel [class~="text-ink-muted"] { color: rgba(255,255,255,.82); }
+.lp-hero-full .lp-panel-link { color: var(--cb-mint); }
+.lp-backdrop-credit { position: absolute; right: 1rem; bottom: .6rem; margin: 0; max-width: 60%; font-size: .7rem; color: rgba(255,255,255,.85); text-align: right; }
+.lp-backdrop-credit a { color: inherit; text-decoration: underline; }
+@media (min-width: 640px) { .lp-hero-full { min-height: calc(100svh - 4.5rem); } }
+@media (prefers-reduced-motion: reduce) { .lp-backdrop, .lp-backdrop * { transition: none; animation: none; } }
+@supports not (min-height: 100svh) { .lp-hero-full { min-height: calc(100vh - 4.25rem); } }
+
+
+/* ---- Reference-style hero (Phase 3b) ----
+ * Left: serif headline, progress, buttons. Right: the photograph (when a licensed one is added) or a live-needs panel.
+ * The shade is darkest where the words are, so contrast never depends on what the photograph looks like. */
+.lp-backdrop { background: #0a1214; }
+.lp-backdrop::before { background: radial-gradient(60% 70% at 85% 30%, rgba(45,212,191,.14), transparent 70%); }
+.lp-backdrop picture, .lp-backdrop img { object-position: 72% 30%; }
+.lp-backdrop-shade { background: linear-gradient(90deg, rgba(10,18,20,.94) 0%, rgba(10,18,20,.82) 38%, rgba(10,18,20,.46) 70%, rgba(10,18,20,.30) 100%), linear-gradient(0deg, rgba(10,18,20,.55), transparent 35%); }
+@media (max-width: 1023px) { .lp-backdrop-shade { background: linear-gradient(180deg, rgba(10,18,20,.82), rgba(10,18,20,.78)); } }
+
+/* floating translucent navigation */
+.lp > header.lp-header { top: .75rem; width: min(76rem, calc(100% - 1.5rem)); margin: .75rem auto 0; border-radius: 1rem; background: rgba(12,22,24,.66); border: 1px solid rgba(255,255,255,.16); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.lp-header .lp-nav-link, .lp-header .lp-icon-btn { color: rgba(255,255,255,.92); }
+.lp-header .lp-nav-link:hover, .lp-header .lp-icon-btn:hover { background: rgba(255,255,255,.14); color: #fff; }
+.lp-header .lp-btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); border-radius: 999px; }
+.lp-header .lp-btn-primary { background: transparent; color: #fff; border-color: #F6C76B; border-radius: 999px; }
+.lp-header .lp-btn-primary:hover { background: #F6C76B; color: #1a1205; }
+.lp-header :focus-visible { outline-color: #fff; }
+.lp-header-menu { background: rgba(12,22,24,.94); border-top: 1px solid rgba(255,255,255,.14); border-radius: 0 0 1rem 1rem; }
+
+.lp-hero-full { position: relative; padding-bottom: 4.5rem; }
+.lp-eyebrow { display: inline-flex; align-items: center; gap: .5rem; margin: 0 0 1rem; font-size: .8rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: #F6C76B; }
+.lp-title-serif { font-family: 'Playfair Display', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif; font-weight: 700; font-size: clamp(2.5rem, 5.2vw, 4.4rem); line-height: 1.06; letter-spacing: -.01em; color: #fff; }
+.lp-line { display: block; }
+.lp-dot-a { color: #F6C76B; } .lp-dot-b { color: #F2784B; }
+.lp-hero-full .lp-lead { max-width: 30rem; }
+.lp-actions { display: block; }
+.lp-cta { display: flex; align-items: center; gap: .55rem; }
+.lp-hero-full .lp-btn { border-radius: 999px; }
+.lp-hero-full .lp-cta .lp-btn-primary { background: #B3441F; border-color: #B3441F; color: #fff; padding: .85rem 1.7rem; font-size: 1rem; }
+.lp-hero-full .lp-cta .lp-btn-primary:hover { background: #8F3518; border-color: #8F3518; }
+.lp-arrow { display: grid; place-items: center; width: 2.9rem; height: 2.9rem; border-radius: 999px; background: #F6C76B; color: #1a1205; transition: transform .15s ease; }
+.lp-arrow:hover { transform: translateX(2px); }
+.lp-more { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+.lp-hero-full .lp-more .lp-btn-sm { padding: .5rem 1.05rem; }
+.lp-progress { margin-top: 1.7rem; max-width: 26rem; color: rgba(255,255,255,.94); }
+.lp-progress p { margin: 0; font-size: .9rem; }
+.lp-progress strong { font-size: 1.1rem; }
+.lp-progress-bar { height: 6px; margin: .55rem 0 .45rem; border-radius: 999px; background: rgba(255,255,255,.22); overflow: hidden; }
+.lp-progress-bar span { display: block; height: 100%; border-radius: inherit; background: #F2784B; }
+.lp-hero-full .lp-progress-sub { font-size: .8rem; color: rgba(255,255,255,.8); }
+/* an irregular, brush-like edge where the hero meets the page (an original shape) */
+.lp-hero-full::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 3.2rem; background: var(--lp-bg); pointer-events: none;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><path d='M0 60V36l40-7 38 8 55-13 70 10 62-9 80 11 90-15 72 9 96-12 85 10 70-8 90 11 80-10 75 9 96-13 70 8 62-6 60 9V60z'/></svg>") bottom / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><path d='M0 60V36l40-7 38 8 55-13 70 10 62-9 80 11 90-15 72 9 96-12 85 10 70-8 90 11 80-10 75 9 96-13 70 8 62-6 60 9V60z'/></svg>") bottom / 100% 100% no-repeat; }
+@media (min-width: 1024px) { .lp-hero-full .lp-hero-inner { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); } }
+@media (prefers-reduced-motion: reduce) { .lp-arrow { transition: none; } .lp-arrow:hover { transform: none; } }
+
+/* Comfortable tap targets: the secondary hero buttons were 34px tall. */
+.lp-hero-full .lp-more .lp-btn-sm { min-height: 2.5rem; }
+@media (max-width: 640px) { .lp-hero-full .lp-more .lp-btn-sm { min-height: 2.75rem; padding: .6rem 1.15rem; } .lp-hero-full .lp-cta .lp-btn-primary { min-height: 3rem; } }
+
+/* ---- Portrait photograph (Phase 3c) ---- */
+.lp-backdrop picture, .lp-backdrop img { object-position: 84% 28%; }      /* keep the face in frame when the screen is not 16:9 */
+.lp-backdrop-shade { background: linear-gradient(90deg, rgba(10,18,20,.94) 0%, rgba(10,18,20,.80) 38%, rgba(10,18,20,.30) 70%, rgba(10,18,20,.12) 100%), linear-gradient(0deg, rgba(10,18,20,.5), transparent 30%); }
+@media (max-width: 1023px) { .lp-backdrop-shade { background: linear-gradient(180deg, rgba(10,18,20,.82), rgba(10,18,20,.78)); } }
+/* scrolling darkens the photograph (set from Home.jsx as --lp-scroll, 0 to 1) so content stays readable over it */
+.lp-backdrop::after { content: ''; position: absolute; inset: 0; background: #0a1214; opacity: calc(var(--lp-scroll, 0) * .6); pointer-events: none; }
+
+.lp-title-serif { font-size: clamp(2.6rem, 5.6vw, 4.8rem); font-weight: 600; line-height: 1.04; letter-spacing: -.015em; }
+.lp-em { font-style: italic; font-weight: 600; color: #F6C76B; }
+.lp-pledge { margin: 1.1rem 0 0; font-family: 'Playfair Display', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif; font-style: italic; font-size: clamp(1.15rem, 1.7vw, 1.5rem); line-height: 1.4; color: rgba(255,255,255,.94); text-shadow: 0 1px 10px rgba(0,0,0,.4); }
+.lp-hero-full .lp-lead { margin-top: .9rem; font-size: 1rem; color: rgba(255,255,255,.86); }
+
+/* Sections slide over the fixed photograph as frosted glass: the picture stays faintly visible through them. */
+.lp-sheet { background: color-mix(in srgb, var(--lp-bg) 86%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.lp-sheet-alt { background: color-mix(in srgb, var(--lp-surface) 84%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.lp > footer { background: color-mix(in srgb, var(--lp-surface) 90%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+@media (prefers-reduced-transparency: reduce) { .lp-sheet, .lp-sheet-alt, .lp > footer { background: var(--lp-bg); -webkit-backdrop-filter: none; backdrop-filter: none; } }
+
+/* polish after reviewing real renders */
+.lp > header.lp-header { background: rgba(12,22,24,.80); }
+.lp-title-serif { font-size: clamp(2.4rem, 4.9vw, 4.3rem); }

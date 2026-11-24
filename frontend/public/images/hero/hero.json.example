@@ -1,0 +1,5 @@
+{
+  "image": "hero-1600.jpg", "webp": "hero-1600.webp", "small": "hero-800.jpg", "small_webp": "hero-800.webp", "width": 1600, "height": 1200,
+  "alt": "Describe exactly what the photograph shows",
+  "credit": "Photo: Name or organization", "license": "Licence or written permission", "source_url": "https://where-it-came-from.example"
+}

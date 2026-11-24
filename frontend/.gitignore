@@ -1,0 +1,11 @@
+node_modules
+dist
+.DS_Store
+
+# secrets: never commit real environment files (browser keys are public by design but must still be restricted)
+.env
+.env.*
+!.env.example
+
+coverage/
+*.log
